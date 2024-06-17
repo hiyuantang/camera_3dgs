@@ -81,10 +81,10 @@ def compute_sfm(img1, img2, img3):
     return points_3d.reshape(-1, 3)
 
 # Example usage
-image_paths = ["camera_stream/0.png", "camera_stream/1.png", "camera_stream/2.png", 
-               "camera_stream/3.png", "camera_stream/4.png", "camera_stream/5.png", 
-               "camera_stream/6.png", "camera_stream/7.png", "camera_stream/8.png", 
-               "camera_stream/9.png"]
+image_paths = ["camera_stream/0.png", "camera_stream/1.png", "camera_stream/2.png", ]
+            #    "camera_stream/3.png", "camera_stream/4.png", "camera_stream/5.png", 
+            #    "camera_stream/6.png", "camera_stream/7.png", "camera_stream/8.png", 
+            #    "camera_stream/9.png"]
 process_images(image_paths)
 
 
