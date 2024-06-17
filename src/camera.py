@@ -64,6 +64,12 @@ def show_camera_and_return_frames(camera_index, target_fps, effective_height, ef
         window_width = cv2.getWindowImageRect('Camera Stream')[2]
         window_height = cv2.getWindowImageRect('Camera Stream')[3]
 
+        # For mac, 
+        if window_width == 0:
+            window_width = 1920
+        if window_height == 0:
+            window_height = 1080
+
         # Calculate the aspect ratio of the frame
         frame_height, frame_width = frame.shape[:2]
         aspect_ratio = frame_width / frame_height
@@ -136,7 +142,7 @@ if __name__ == "__main__":
     target_fps = 1  # Define the target FPS for returning frames
     effective_height = 1000  # Define the effective height of the central region
     effective_width = 1000  # Define the effective width of the central region
-    apply_blur = True  # Toggle Gaussian blur on or off
+    apply_blur = False  # Toggle Gaussian blur on or off
     show_rectangle = True  # Toggle drawing the rectangle on or off
     flip_horizontal = True  # Toggle horizontal flipping on or off
 
@@ -154,9 +160,6 @@ if __name__ == "__main__":
         
         # Save the frame as an image
         cv2.imwrite(filename, frame)
-        
-        # Print the shape of the frame for demonstration
-        print("Returned frame shape:", frame.shape)
         
         # Increment the frame counter
         frame_counter += 1
