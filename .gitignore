@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # Custom
-./camera_stream
+camera_stream
